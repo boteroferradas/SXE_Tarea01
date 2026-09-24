@@ -10,3 +10,24 @@
 | **Gestor de BBDD** | MySQL 5.5.5+  | | Igual que la version de PHP, se dice que la 5.5.5 es la minima, pero instalare una superior  | https://nexonhost.com/wordpress-hosting-requirements |
 | **Memoria y Disco** | 1.5 GB de RAM 5GB de espacio en disco | 3GB de RAM como minimo 25GB de espacio en disco | | https://ubuntu.com/server/docs/reference/installation/system-requirements/ |
 
+<h2>Configuacion de la VM</h2>
+<ul>
+  <li> <strong>S.O</strong>:   Ubuntu Server 26.04.1</li>
+  <li><strong>Nº de Cores:</strong> 2</li>
+  <li><strong>Memoria Total:</strong> 4GB</li>
+  <li><strong>Espacio en Disco:</strong> 25GB</li>
+</ul>
+<br>
+
+<h2>Instalación</h2>
+
+<h3>Instalacion de Ubuntu Server</h3>
+
+![Ubuntu Server](capturas/ubuntuServer.png)
+<p>Muy sencillo, dejar las opciones por defecto e instalar el SSH para poder operar con comandos el sistema</p>
+
+<h3>Instalacion de PHP</h3>
+
+![PHP desde terminal](capturas/php.png)
+<p>Comando: 'sudo apt install' php</p>
+
