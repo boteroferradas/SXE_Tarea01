@@ -28,6 +28,22 @@
 
 <h3>Instalacion de PHP</h3>
 
-![PHP desde terminal](capturas/php.png)
-<p>Comando: 'sudo apt install' php</p>
+![PHP](capturas/php.png)
+Comando: `sudo apt install php`
 
+<h3>Instalacion de MySQL</h3>
+
+![MySQL](capturas/mysql.png)
+
+
+
+<h3>Instalacion de Wordpress</h3>
+
+![WordPress](capturas/wordpress.png)
+
+
+<h3>Configuracion de Wordpress </h3>
+
+![Configuracion](capturas/usuariowp.png)
+
+Creacion de base de datos en wordpress, usuario y contraseña mas comprobacion de que ha sido creada
