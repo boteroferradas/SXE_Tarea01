@@ -21,29 +21,73 @@
 
 <h2>Instalación</h2>
 
-<h3>Instalacion de Ubuntu Server</h3>
+<h3>1. S.O. - Instalacion de Ubuntu Server</h3>
 
 ![Ubuntu Server](capturas/ubuntuServer.png)
-<p>Muy sencillo, dejar las opciones por defecto e instalar el SSH para poder operar con comandos el sistema</p>
+<p>Avanzar con las opciones por defecto e instalar el SSH para poder operar con comandos el sistema</p>
 
-<h3>Instalacion de PHP</h3>
+<h3>2. Servidor Web - Instalacion de Apache</h3>
+
+![Apache](capturas/apache.png)
+Comando: 
+```
+sudo systemctl start apache2
+sudo systemctl enable apache2
+```
+
+<h3>3 - Instalacion de PHP</h3>
 
 ![PHP](capturas/php.png)
-Comando: `sudo apt install php`
+Comando: 
+```
+sudo apt install php
+```
 
-<h3>Instalacion de MySQL</h3>
+<h3>4 - Instalacion de MySQL</h3>
 
 ![MySQL](capturas/mysql.png)
+Comando: 
+```
+sudo apt install mysql-server`
+```
 
-
-
-<h3>Instalacion de Wordpress</h3>
+<h3>5 - Instalacion de Wordpress</h3>
 
 ![WordPress](capturas/wordpress.png)
+Comandos:
+Descargar el archivo necesario
+```
+sudo apt install wget
+cd /tmp
+wget http://wordpress.org/latest.tar.gz
+```
+Desempaquetarlo:
+`tar -xf latest.tar.gz`
+Moverlo al directorio por defecto de los archivos web de Apache2
+```
+sudo mv wordpress /var/www/html
+sudo chown www-data:www-data /var/www/html -R
+```
 
-
-<h3>Configuracion de Wordpress </h3>
+<h3>6 - Configuracion de Wordpress </h3>
 
 ![Configuracion](capturas/usuariowp.png)
 
 Creacion de base de datos en wordpress, usuario y contraseña mas comprobacion de que ha sido creada
+
+Para crear la base de datos:
+```
+sudo mysql -e "CREATE DATABASE wordpress;"
+```
+Crear Usuario y Contraseña
+```
+sudo mysql -e "CREATE USER 'wordpress'@'%' IDENTIFIED BY ´contraseña_exemplo´;"
+```
+Dar permisos: 
+```
+sudo mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'%';"
+```
+Comprobar a creacion: 
+```
+sudo mysql -e "SHOW databases;"
+```
