@@ -19,18 +19,22 @@
 </ul>
 <br>
 
-<h2>Instalación</h2>
-
-<h3>1. S.O. - Instalacion de Ubuntu Server</h3>
+<h3>1. S.O. - Instalación de Ubuntu Server</h3>
 
 ![Ubuntu Server](capturas/ubuntuServer.png)
-<p>Avanzar con las opciones por defecto e instalar el SSH para poder operar con comandos el sistema</p>
+<p>Avanzar con las opciones por defecto e instalar el servidor OpenSSH para poder gestionar el sistema mediante terminal remota.</p>
 
-<h3>2. Servidor Web - Instalacion de Apache</h3>
+<h3>2. Configuración de Red (Adaptador Puente)</h3>
+
+<p>Para permitir la comunicación directa entre el equipo anfitrión y la máquina virtual, configurar la interfaz de red en el hipervisor en modo <strong>Adaptador Puente (Bridged)</strong> asignado a la tarjeta de red activa del host.</p>
+
+<h3>3. Servidor Web - Instalación de Apache</h3>
 
 ![Apache](capturas/apache.png)
-Comando: 
+Comandos:
 ```
+sudo apt update
+sudo apt install apache2 -y
 sudo systemctl start apache2
 sudo systemctl enable apache2
 ```
@@ -39,14 +43,16 @@ sudo systemctl enable apache2
 
 ![PHP](capturas/php.png)
 Comando: 
+Instalar PHP junto con el módulo de MySQL y las librerías requeridas por WordPress:
 ```
-sudo apt install php
+sudo apt install php libapache2-mod-php php-mysql -y
 ```
 
 <h3>4 - Instalacion de MySQL</h3>
 
 ![MySQL](capturas/mysql.png)
-Comando: 
+Comando:
+Instalar mysql:
 ```
 sudo apt install mysql-server
 ```
@@ -64,10 +70,12 @@ Desempaquetarlo:
 ```
 tar -xf latest.tar.gz
 ```
-Moverlo al directorio por defecto de los archivos web de Apache2:
+Mover el contenido directamente al directorio de Apache, eliminar el index por defecto y asignar permisos:
 ```
-sudo mv wordpress /var/www/html
-sudo chown www-data:www-data /var/www/html -R
+sudo mv /tmp/wordpress/* /var/www/html/
+sudo rm -f /var/www/html/index.html
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
 ```
 
 <h3>6 - Configuracion de Wordpress </h3>
@@ -92,3 +100,7 @@ Comprobar a creacion:
 ```
 sudo mysql -e "SHOW databases;"
 ```
+
+<h3>7 - Comprobacion en Navegador</h3>
+
+
