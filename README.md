@@ -24,9 +24,13 @@
 ![Ubuntu Server](capturas/ubuntuServer.png)
 <p>Avanzar con las opciones por defecto e instalar el servidor OpenSSH para poder gestionar el sistema mediante terminal remota.</p>
 
+#### Correcion ####
+########################################################
 <h3>2. Configuración de Red (Adaptador Puente)</h3>
+![Configuracion de Red](capturas/redconf.png)
 
-<p>Para permitir la comunicación directa entre el equipo anfitrión y la máquina virtual, configurar la interfaz de red en el hipervisor en modo <strong>Adaptador Puente (Bridged)</strong> asignado a la tarjeta de red activa del host.</p>
+<p>Para permitir la comunicación directa entre el equipo anfitrión y la máquina virtual, configurar la interfaz de red en la MV en modo <strong>Adaptador Puente (Bridged)</strong>.</p>
+########################################################
 
 <h3>3. Servidor Web - Instalación de Apache</h3>
 
@@ -41,8 +45,9 @@ sudo systemctl enable apache2
 
 <h3>3 - Instalacion de PHP</h3>
 
-![PHP](capturas/php.png)
+![PHP](capturas/phplibreria.png)
 Comando: 
+
 Instalar PHP junto con el módulo de MySQL y las librerías requeridas por WordPress:
 ```
 sudo apt install php libapache2-mod-php php-mysql -y
@@ -52,6 +57,7 @@ sudo apt install php libapache2-mod-php php-mysql -y
 
 ![MySQL](capturas/mysql.png)
 Comando:
+
 Instalar mysql:
 ```
 sudo apt install mysql-server
@@ -77,7 +83,6 @@ sudo rm -f /var/www/html/index.html
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 ```
-
 <h3>6 - Configuracion de Wordpress </h3>
 
 ![Configuracion](capturas/usuariowp.png)
@@ -103,4 +108,5 @@ sudo mysql -e "SHOW databases;"
 
 <h3>7 - Comprobacion en Navegador</h3>
 
+![WP instalador](capturas/wpnavegador.png)
 
