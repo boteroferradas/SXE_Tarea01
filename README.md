@@ -27,6 +27,7 @@
 #### Correcion ####
 ########################################################
 <h3>2. Configuración de Red (Adaptador Puente)</h3>
+
 ![Configuracion de Red](capturas/redconf.png)
 
 <p>Para permitir la comunicación directa entre el equipo anfitrión y la máquina virtual, configurar la interfaz de red en la MV en modo <strong>Adaptador Puente (Bridged)</strong>.</p>
