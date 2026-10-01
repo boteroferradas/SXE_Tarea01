@@ -111,3 +111,5 @@ sudo mysql -e "SHOW databases;"
 
 ![WP instalador](capturas/wpnavegador.png)
 
+Se puede comprobar en el navegador con `http://ip_de_mv/wp-admin/setup-config.php`
+
